@@ -3,7 +3,7 @@
 
 <head>
 	<title>Первая страница</title>
-	<link rel='stylesheet' href='../style.css' />
+	<link rel='stylesheet' href='#' />
 	<meta http-equiv='Content-type' content='text/html;charset=UTF-8' />
 </head>
 
@@ -11,13 +11,14 @@
 	Thise is home page..
 	<br>
 	{{greeting}}
-	<form action="http://127.0.0.1:8000" method="GET" enctype="multipart/form-data">
+	<form action="{% url 'reverse' %}" method="GET" enctype="multipart/form-data">
 		<div>
-			<textarea name="usertext" id="textarea" cols="30" rows="10"></textarea>
+			<textarea name="usertext" cols="30" rows="10"></textarea>
 		</div>
 		<div class="button">
-			<input type="submit" value="Reverse!">Reverse!</input>
+			<input type="submit" value="Reverse! "></input>
 		</div>
+	</form>
 </body>
 
 </html>
