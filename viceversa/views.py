@@ -11,5 +11,9 @@ def home(request):
 def reverse(request):
     user_text = request.GET['usertext']
     reversed_text = user_text[::-1]
-    lenth = len(user_text)
-    return render(request, 'reversed.html', {'usertext':user_text, 'reversedtext':reversed_text, 'lenth': lenth})
+    counter_of_letters = 0
+    for letter in user_text:
+        if letter != ' ':
+            counter_of_letters += 1
+    words = len(user_text.split())
+    return render(request, 'reversed.html', {'usertext':user_text, 'reversedtext':reversed_text, 'lenth': counter_of_letters, 'words':words})
